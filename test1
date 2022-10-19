@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+int count_c(char const *s, char c)
+{
+    int i;
+    int y;
+    
+    y = 0;
+    i = 0;
+    while (s[i])
+    {
+        if(s[i] == c)
+            y++;
+        i++;
+    }
+    return (y);
+}
+char    **ft_split(char const *s, char c)
+{
+    int i;
+    int j;
+    int k;
+    char **ret;
+    char    *temp;
+    int l = 0;
+    
+    i = 0;
+    j = 0;
+    ret = (char **)malloc(sizeof(char *) * count_c(s,c) + 2);
+    while (s[i])
+    {
+        k = 0;
+        while(s[j] != c)
+            j++;
+        temp = malloc(j + 1);
+        while(j > k)
+        {
+            temp[k] = s[i];
+            i++;
+            k++;
+        }
+        j++;
+        temp[k] = '\0';
+        ret [l] = strdup(temp);
+        l++;
+        free(temp);
+    }
+    return (ret);
+}
+int main() {
+  char  **l = ft_split("bhbh*jnj",'*');
+  puts(l[0]);
+  return 0;
+}
