@@ -6,7 +6,7 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:00:13 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/19 14:13:30 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/19 17:21:33 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ char	**ft_split(char const *str, char set)
 	j = 0;
 	i = 0;
 	ret = (char **)malloc(sizeof(char *) * count_words((char *)str, set));
+	if (!ret)
+		return (NULL);
 	while (str[i])
 	{
 		while (str[i] == set)
@@ -61,11 +63,11 @@ char	**ft_split(char const *str, char set)
 	return (ret);
 }
 
-int	main(void)
-{
-	char **r;
+// int	main(void)
+// {
+// 	char **r;
 
-	r = ft_split("    lololo", ' ');
-	puts(r[0]);
-	return (0);
-}
+// 	r = ft_split("    lololo", ' ');
+// 	puts(r[0]);
+// 	return (0);
+// }

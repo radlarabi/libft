@@ -6,7 +6,7 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:09:54 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/18 22:50:23 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/19 17:20:49 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 }
 
 
-int main()
-{
-	char *r = ft_substr("01234",10,10);
-	puts(r);
-}
+// int main()
+// {
+// 	char *r = ft_substr("01234",10,10);
+// 	puts(r);
+// }

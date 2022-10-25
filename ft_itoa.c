@@ -6,7 +6,7 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:26:19 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/19 12:28:59 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/19 17:23:29 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ char	*ft_itoa(int n)
 	return (ret);
 }
 
-int	main(void)
-{
-	// int	a = 1234;
-	puts(ft_itoa(-159));
-	return (0);
-}
+// int	main(void)
+// {
+// 	// int	a = 1234;
+// 	puts(ft_itoa(-159));
+// 	return (0);
+// }

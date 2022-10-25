@@ -6,7 +6,7 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:26:26 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/18 23:04:53 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/19 17:40:38 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
-int					*ft_atoi(const char *str);
+int					ft_atoi(const char *str);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 char				*ft_substr(char const *s, unsigned int start, size_t len);

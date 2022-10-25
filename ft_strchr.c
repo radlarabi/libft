@@ -6,22 +6,23 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:57:37 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/13 18:22:01 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/20 11:05:45 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*a;
+	unsigned char	*a;
 	int		i;
 
 	i = 0;
-	a = (char *)s;
+	a = (unsigned char *)s;
 	while (a[i])
 	{
-		if(a[i] == c)
-			return (a + i);
+		if(a[i] == (unsigned char)c)
+			return (char *)(a + i);
 		i++;
 	}
-	return (0);
+	return (char *) (a + i);
 }
+

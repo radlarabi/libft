@@ -6,25 +6,11 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 15:11:10 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/19 15:15:59 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/19 20:19:11 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	del(void *c)
-{
-	char	*r;
-	int		i;
-
-	i = 0;
-	r = (char *)c;
-	while (r[i])
-	{
-		free(r[i]);
-		i++;
-	}
-}
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
@@ -37,5 +23,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
         i++;
     }
     lst[i] = NULL;
-    
 }

@@ -6,13 +6,13 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 21:03:47 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/15 14:19:39 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/19 18:32:22 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	char			*a;
 	char			*b;

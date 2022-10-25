@@ -6,7 +6,7 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:11:20 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/14 11:33:43 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/19 17:20:53 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (ret);
 }
-int main()
-{
-	char *p;
-	p = ft_strtrim("/*bjlcxd*/**","*/");
-	printf("%s",p);
-	return 0;
-}
+// int main()
+// {
+// 	char *p;
+// 	p = ft_strtrim("/*bjlcxd*/**","*/");
+// 	printf("%s",p);
+// 	return 0;
+// }

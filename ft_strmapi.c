@@ -6,7 +6,7 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 12:09:14 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/18 17:06:28 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/19 17:21:00 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ char    f(unsigned int a, char c)
     return (b);
 }
 
-int main()
-{   
-    char *r;
-    r = "abc";
-    printf("%s",ft_strmapi(r,&f));
-    return 0;    
-}
+// int main()
+// {   
+//     char *r;
+//     r = "abc";
+//     printf("%s",ft_strmapi(r,&f));
+//     return 0;    
+// }
