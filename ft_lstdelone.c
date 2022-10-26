@@ -6,18 +6,14 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 14:04:19 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/19 20:21:27 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/24 20:29:55 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	del(void *lst)
-{
-	free(lst);
-}
-
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	del(lst);
+	del(lst->content);
+	free(lst);
 }

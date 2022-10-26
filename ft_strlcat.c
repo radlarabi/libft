@@ -6,24 +6,28 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 10:52:56 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/16 14:41:08 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/24 17:54:39 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-    unsigned int    dst_len;
-    unsigned int    i;
+	unsigned int	lens;
+	unsigned int	lend;
+	unsigned int	i;
 
-    i = 0;
-    dst_len = ft_strlen(dst);
-    while (src[i] && i < dstsize - ft_strlen(dst) - 1)
-    {
-        dst[dst_len + i] = src[i];
-        i++;
-    }
-    dst[dst_len + i] = '\0';
-    return (ft_strlen(src) + dst_len);
+	lens = ft_strlen(src);
+	lend = ft_strlen(dst);
+	i = 0;
+	if (dstsize == 0 || dstsize <= lend)
+		return (dstsize + lens);
+	while (src[i] && i < dstsize - lend - 1)
+	{
+		dst[lend + i] = src[i];
+		i++;
+	}
+	dst[lend + i] = '\0';
+	return (lens + lend);
 }

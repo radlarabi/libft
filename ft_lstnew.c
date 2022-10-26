@@ -6,7 +6,7 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:24:38 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/19 13:04:00 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/21 17:10:45 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *node;
+	t_list	*node;
 
 	node = malloc(sizeof(t_list));
 	if (!node)

@@ -6,7 +6,7 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 10:23:23 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/15 14:23:03 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/25 12:16:27 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 
 	i = 0;
 	src_len = ft_strlen(src);
+	if (!dstsize)
+		return (src_len);
 	while (src[i] && i < dstsize - 1)
 	{
 		dest[i] = src[i];

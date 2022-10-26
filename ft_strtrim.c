@@ -6,14 +6,13 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:11:20 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/19 17:20:53 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/25 20:01:28 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-int	check_start(const char *str, char *s)
+static int	check_start(const char *str, char *s)
 {
 	int	count;
 
@@ -23,7 +22,7 @@ int	check_start(const char *str, char *s)
 	return (count);
 }
 
-int	check_end(const char *str, char *s)
+static int	check_end(const char *str, char *s)
 {
 	int	count;
 	int	str_len;
@@ -34,38 +33,32 @@ int	check_end(const char *str, char *s)
 	{
 		count++;
 		str_len--;
-	}		
+	}
 	return (count);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned int		i;
-	char				*ret;
-	int					start;
-	int					end;
-	char				*str;
-	char				*s;
+	unsigned int	i;
+	unsigned int	len;
+	char			*ret;
+	int				start;
+	int				end;
 
-	str = (char *)s1;
-	s = (char *)set;
 	i = 0;
-	start = check_start(str, s);
-	end = check_end(str, s);
-	ret = (char *)malloc(ft_strlen(str) - start - end + 1);
-	if(!ret)
-		return (0);
-	while (i < ft_strlen(str) - start - end)
+	len = ft_strlen((char *)s1);
+	start = check_start((char *)s1, (char *)set);
+	end = check_end((char *)s1, (char *)set);
+	if (len == (unsigned int)start || len == (unsigned int)end)
+		return (ft_strdup(""));
+	ret = (char *)malloc(len - start - end + 1);
+	if (!ret)
+		return (NULL);
+	while (i < len - start - end)
 	{
-		ret[i] = str[start + i];
+		ret[i] = s1[start + i];
 		i++;
 	}
+	ret[i] = '\0';
 	return (ret);
 }
-// int main()
-// {
-// 	char *p;
-// 	p = ft_strtrim("/*bjlcxd*/**","*/");
-// 	printf("%s",p);
-// 	return 0;
-// }

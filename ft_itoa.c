@@ -6,14 +6,13 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:26:19 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/19 17:23:29 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/24 21:48:23 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	count_numbers(long l)
+static int	count_numbers(long l)
 {
 	int	count;
 
@@ -58,10 +57,3 @@ char	*ft_itoa(int n)
 	}
 	return (ret);
 }
-
-// int	main(void)
-// {
-// 	// int	a = 1234;
-// 	puts(ft_itoa(-159));
-// 	return (0);
-// }

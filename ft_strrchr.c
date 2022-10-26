@@ -6,15 +6,16 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 11:20:44 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/20 10:49:50 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/24 17:56:48 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
 	unsigned char	*a;
-	int		i;
+	int				i;
 
 	i = 0;
 	a = (unsigned char *)s;
@@ -22,8 +23,8 @@ char	*ft_strrchr(const char *s, int c)
 		i++;
 	while (i >= 0)
 	{
-		if(a[i] == (unsigned char)c)
-			return (char *)(&a[i]);
+		if (a[i] == (unsigned char)c)
+			return ((char *)(&a[i]));
 		i--;
 	}
 	return (0);
