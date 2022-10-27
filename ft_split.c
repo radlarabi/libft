@@ -6,7 +6,7 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:00:13 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/26 12:03:44 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/26 13:43:36 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,14 @@ static int	count_set(const char *str, char set, int i)
 	return (i);
 }
 
-static void free_str(char **ret)
+static int	count_non_set(const char *str, char set, int i)
+{
+	while (str[i] != set && str[i])
+			i++;
+	return (i);
+}
+
+static void	free_str(char **ret)
 {
 	int	i;
 
@@ -73,17 +80,14 @@ char	**ft_split(char const *str, char set)
 	{
 		i = count_set(str, set, i);
 		start = i;
-		while (str[i] != set && str[i])
-			i++;
+		i = count_non_set(str, set, i);
 		if (len > j)
 		{
 			ret[j] = ft_substr(str, start, i - start);
-			// if (j == 1)
-			//   ret[j] = NULL;
 			if (ret[j] == NULL)
 			{
 				free_str(ret);
-				return NULL;
+				return (NULL);
 			}
 			j++;
 		}
@@ -91,15 +95,3 @@ char	**ft_split(char const *str, char set)
 	ret[j] = NULL;
 	return (ret);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char **r = ft_split(" hello!       kk     ", ' ');
-// 	int i = 0;
-// 	while (r[i])
-// 	{
-// 		puts(r[i]);
-// 		i++;
-// 	}
-// }

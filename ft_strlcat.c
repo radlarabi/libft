@@ -6,7 +6,7 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 10:52:56 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/24 17:54:39 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/26 15:03:59 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	unsigned int	i;
 
 	lens = ft_strlen(src);
+	if (!dst && !dstsize)
+		return (lens);
 	lend = ft_strlen(dst);
 	i = 0;
-	if (dstsize == 0 || dstsize <= lend)
+	if (!dstsize || dstsize <= lend)
 		return (dstsize + lens);
 	while (src[i] && i < dstsize - lend - 1)
 	{
