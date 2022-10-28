@@ -6,7 +6,7 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:00:13 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/26 13:43:36 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/28 17:27:34 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int	count_set(const char *str, char set, int i)
 static int	count_non_set(const char *str, char set, int i)
 {
 	while (str[i] != set && str[i])
-			i++;
+		i++;
 	return (i);
 }
 
@@ -78,18 +78,16 @@ char	**ft_split(char const *str, char set)
 		return (NULL);
 	while (str[i])
 	{
-		i = count_set(str, set, i);
-		start = i;
-		i = count_non_set(str, set, i);
+		start = count_set(str, set, i);
+		i = count_non_set(str, set, start);
 		if (len > j)
 		{
 			ret[j] = ft_substr(str, start, i - start);
-			if (ret[j] == NULL)
+			if (ret[j++] == NULL)
 			{
 				free_str(ret);
 				return (NULL);
 			}
-			j++;
 		}
 	}
 	ret[j] = NULL;

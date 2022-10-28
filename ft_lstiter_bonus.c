@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 11:09:54 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/28 15:11:47 by rlarabi          ###   ########.fr       */
+/*   Created: 2022/10/24 10:55:47 by rlarabi           #+#    #+#             */
+/*   Updated: 2022/10/24 17:52:24 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	char			*ret;
-	unsigned int	i;
-
-	i = 0;
-	if (ft_strlen(s) < start)
-		return (ft_strdup(""));
-	if (len > ft_strlen(s) - start)
-		len = ft_strlen(s) - start;
-	ret = (char *)malloc(len * sizeof(char) + 1);
-	if (!ret)
-		return (NULL);
-	while (s[i] && i < len)
+	while (lst)
 	{
-		ret[i] = s[start++];
-		i++;
+		f(lst->content);
+		lst = lst->next;
 	}
-	ret[i] = '\0';
-	return (ret);
 }

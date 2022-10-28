@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 11:09:54 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/28 15:11:47 by rlarabi          ###   ########.fr       */
+/*   Created: 2022/10/18 10:51:48 by rlarabi           #+#    #+#             */
+/*   Updated: 2022/10/21 16:26:17 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	char			*ret;
-	unsigned int	i;
-
-	i = 0;
-	if (ft_strlen(s) < start)
-		return (ft_strdup(""));
-	if (len > ft_strlen(s) - start)
-		len = ft_strlen(s) - start;
-	ret = (char *)malloc(len * sizeof(char) + 1);
-	if (!ret)
-		return (NULL);
-	while (s[i] && i < len)
-	{
-		ret[i] = s[start++];
-		i++;
-	}
-	ret[i] = '\0';
-	return (ret);
+	new->next = lst[0];
+	lst[0] = new;
 }

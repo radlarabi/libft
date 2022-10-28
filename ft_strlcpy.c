@@ -6,7 +6,7 @@
 /*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 10:23:23 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/26 15:05:16 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/10/27 17:52:32 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,4 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 	}
 	dest[i] = '\0';
 	return (src_len);
-}
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-	char *a = "NULL";
-	// printf("%lu \n",ft_strlcpy(a,"NULL",1));
-	printf("%lu",strlcpy(a,"NULL",1));
-
 }
