@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rlarabi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:11:20 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/25 20:01:28 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/11/01 12:06:35 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int				end;
 
 	i = 0;
+	if (!s1 || !set)
+		return (NULL);
 	len = ft_strlen((char *)s1);
 	start = check_start((char *)s1, (char *)set);
 	end = check_end((char *)s1, (char *)set);

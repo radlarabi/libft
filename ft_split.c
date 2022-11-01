@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlarabi <rlarabi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: rlarabi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:00:13 by rlarabi           #+#    #+#             */
-/*   Updated: 2022/10/28 17:27:34 by rlarabi          ###   ########.fr       */
+/*   Updated: 2022/11/01 14:27:44 by rlarabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	count_words(char *str, char c)
 	count = 0;
 	j = 1;
 	i = 0;
-	while (str[i])
+	while (str && str[i])
 	{
 		if (str[i] != c && j)
 		{
@@ -44,22 +44,27 @@ static int	count_set(const char *str, char set, int i)
 
 static int	count_non_set(const char *str, char set, int i)
 {
-	while (str[i] != set && str[i])
+	while (str[i] && str[i] != set)
 		i++;
 	return (i);
 }
 
-static void	free_str(char **ret)
+static int	free_str(char **ret, int d)
 {
 	int	i;
 
 	i = 0;
-	while (ret[i])
+	if (!ret[d])
 	{
-		free(ret[i]);
-		i++;
+		while (ret[i])
+		{
+			free(ret[i]);
+			i++;
+		}
+		free(ret);
+		return (0);
 	}
-	free(ret);
+	return (1);
 }
 
 char	**ft_split(char const *str, char set)
@@ -76,18 +81,15 @@ char	**ft_split(char const *str, char set)
 	ret = (char **)malloc(sizeof(char *) * (len + 1));
 	if (!ret)
 		return (NULL);
-	while (str[i])
+	while (str && str[i])
 	{
 		start = count_set(str, set, i);
 		i = count_non_set(str, set, start);
 		if (len > j)
 		{
 			ret[j] = ft_substr(str, start, i - start);
-			if (ret[j++] == NULL)
-			{
-				free_str(ret);
+			if (!free_str(ret, j++))
 				return (NULL);
-			}
 		}
 	}
 	ret[j] = NULL;
